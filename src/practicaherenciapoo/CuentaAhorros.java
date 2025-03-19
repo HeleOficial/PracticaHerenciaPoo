@@ -58,7 +58,7 @@ class CuentaAhorros extends Cuenta {
         if (saldo <  MONTO_MINIMO) {
             cuentaActiva = false;
        }else {
-            activa = true;
+            cuentaActiva = true;
         }
             
     }

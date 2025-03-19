@@ -32,17 +32,22 @@ class CuentaCorriente extends Cuenta {
     
     public void consignar(float cantidad) {
         float sobregiroTemporal = sobregiro - cantidad;
+            //sobregiroTemporal = -3000
         
         if (sobregiro > 0) {
-            if (cantidad <= sobregiro) {
-                sobregiro -= cantidad;
+            if (sobregiroTemporal > 0) {
+                sobregiro = sobregiroTemporal;
             } else {
-                saldo = cantidad - sobregiro;
+                saldo = saldo - sobregiroTemporal;
                 sobregiro = 0;
             }
         } else {
             super.consignar(cantidad);
         }
+    }
+    
+    public void extractoMensual() {
+        super.extractoMensual();
     }
     
     public void imprimir() {
